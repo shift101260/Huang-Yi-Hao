@@ -50,21 +50,26 @@
             position: relative;
         }
 
+        /* 圓形頭像外框（負責裁切放大後的半身人像） */
         .avatar-wrapper {
             position: relative;
-            display: inline-block;
-            margin-bottom: 16px;
-        }
-
-        .avatar { 
-            width: 120px; 
-            height: 120px; 
-            border-radius: 50%; 
-            object-fit: cover; 
-            object-position: top center;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 16px;
             border: 3.5px solid #d97706; 
             box-shadow: 0 6px 16px rgba(217, 119, 6, 0.25);
             background: #f1f5f9;
+        }
+
+        .avatar { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            object-position: 50% 34%;
+            transform: scale(2.1);
+            transform-origin: 50% 32%;
         }
 
         .company-tag {
@@ -492,14 +497,14 @@
 
     <!-- 快捷動作按鈕 -->
     <div class="quick-actions">
-        <a href="tel:0911035868" class="action-card" onclick="copyText('0911035868', '電話號碼已複製')">
+        <a href="tel:0905331357" class="action-card" onclick="copyText('0905331357', '電話號碼已複製')">
             <i class="fa-solid fa-phone action-icon phone"></i>
             <span class="action-label">電話</span>
             <span class="action-val">0905331357</span>
             <span class="copy-badge"><i class="fa-regular fa-copy"></i> 複製/撥打</span>
         </a>
 
-        <a href="mailto:ruili1101108@gmail.com" class="action-card" onclick="copyText('thomas9926261@gmail.com', '信箱已複製')">
+        <a href="mailto:thomas9926261@gmail.com" class="action-card" onclick="copyText('thomas9926261@gmail.com', '信箱已複製')">
             <i class="fa-solid fa-envelope action-icon email"></i>
             <span class="action-label">電子郵件</span>
             <span class="action-val">Gmail</span>
@@ -607,7 +612,7 @@
                 <i class="fa-solid fa-square-parking nav-icon"></i>
                 <span class="nav-label">高雄總公司<br>停車資訊</span>
             </a>
-            <div class="nav-card" onclick="openModal('elevator.jpg', 'floor30.jpg')">
+            <div class="nav-card" onclick="openModal('https://shift101260.github.io/FAN-CHING-YUN/elevator.jpg', 'https://shift101260.github.io/FAN-CHING-YUN/floor30.jpg')">
                 <i class="fa-solid fa-elevator nav-icon"></i>
                 <span class="nav-label">高雄總公司<br>辦公室導覽</span>
             </div>
@@ -619,7 +624,7 @@
         <img id="qrcode-img" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.yuanyeh.com.tw" alt="QR Code">
         
         <div class="url-copy-box">
-            <span class="url-text" id="card-url-text">https://card.ruili.com/cbo</span>
+            <span class="url-text" id="card-url-text">https://shift101260.github.io/Huang-Yi-Hao/</span>
             <button class="url-copy-btn" onclick="copyCardUrl()">
                 <i class="fa-regular fa-copy"></i> 複製網址
             </button>
